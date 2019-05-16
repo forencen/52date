@@ -4,11 +4,15 @@ import router from './router'
 import store from './store/index'
 import filters from './filters/index'
 import wechat from '@/common/wechat/index'
+import Mint from 'mint-ui';
+import 'mint-ui/lib/style.css'
+
 Vue.use(wechat);
+Vue.use(Mint);
 // 注入全局过滤器
 Object.keys(filters).forEach(item => {
     Vue.filter(item, filters[item])
-})
+});
 // const wx = Vue.wechat;
 // wx.config({
 //     appId: '',
@@ -17,10 +21,10 @@ Object.keys(filters).forEach(item => {
 //     timestamp: '',
 //     jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
 // })
-Vue.config.productionTip = false
-Vue.config.devtools = true
+Vue.config.productionTip = false;
+Vue.config.devtools = true;
 new Vue({
     router,
     store,
     render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');

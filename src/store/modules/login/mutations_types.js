@@ -1,1 +1,1 @@
-export const LOGIN = 'LOGIN'// 获取用户信息
+export const LOGIN = 'LOGIN'; // 获取用户信息

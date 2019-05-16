@@ -11,9 +11,9 @@
             <i></i>
             <input type="password" placeholder="密码" v-model="password" autocomplete='off'>
         </div>
-        <div class="btnBox">
-        <button @click="loginBtn" class="loginBtn">登录</button>
-
+        <div class="loginRegisterBox">
+            <button @click="loginBtn" class="loginBtn">登录</button>
+            <button @click="registerBtn" class="registerBtn">注册</button>
         </div>
     </section>
 </template>
@@ -54,6 +54,13 @@ export default {
                     $route: this.$route
                 });
             }
+        },
+        registerBtn() {
+            this.$router.push({
+                path: '/register',
+                params: {
+                }
+            });
         }
     }
 };
@@ -79,10 +86,12 @@ export default {
                 font-size: 28px;
                 border: none;
                 padding-left: 60px;
+                border-radius: 20px;
             }
             i {
                 position: absolute;
                 display: block;
+                margin-left: 20px;
             }
         }
         .userNameBox {
@@ -103,11 +112,14 @@ export default {
                 background-size: contain;
             }
         }
-        .btnBox{
-         margin: 68px 45px 0 45px;
+        .loginRegisterBox{
+            margin: 65px 45px 0 45px;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px;
         .loginBtn {
-            @include line-height(90px,
-            90px);
+            @include line-height(90px, 90px);
             font-size:32px;
             border-radius: 90px;
             background: linear-gradient(to right,#f9d191,#f9b490);
@@ -115,6 +127,16 @@ export default {
             display:block;
             width:100%;
             color:#fff;
-        } }
+        }
+        .registerBtn {
+            @include line-height(90px, 90px);
+            font-size:32px;
+            border-radius: 90px;
+            background: linear-gradient(to right,#f1f180,#f9b490);
+            border:none;
+            display:block;
+            width:100%;
+            color:#fff;
+        }}
     }
 </style>

@@ -52,7 +52,7 @@ module.exports = {
                 new UglifyJsPlugin({
                     uglifyOptions: {
                         compress: {
-                            warnings: false,
+                            // warning: false,
                             drop_console: true,
                             drop_debugger: false,
                             pure_funcs: ['console.log'] // 移除console
@@ -136,4 +136,4 @@ module.exports = {
         // 设置代理，用来解决本地开发跨域问题，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
         proxy: 'https://easy-mock.com/' // 设置代理
     }
-}
+};

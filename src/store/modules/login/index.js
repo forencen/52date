@@ -8,7 +8,6 @@ export default {
         user: JSON.parse(localStorage.getItem('userDate')) || {}
     },
     mutations: {
-
         [type.LOGIN](state, data) {
             let userDate = data.data;
             state.token = userDate.token;
@@ -24,7 +23,7 @@ export default {
                 let res = await login({
                     username: data.username,
                     password: data.password
-                })
+                });
                 state.commit(type.LOGIN, res);
                 Toast({
                     message: '登录成功',
@@ -47,7 +46,7 @@ export default {
             return state.token
         },
         user(state) {
-            console.log('state', state);
+            // console.log('state', state);
             return state.user
         }
     }
